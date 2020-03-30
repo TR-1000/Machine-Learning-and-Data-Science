@@ -1,5 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
+# python -m http.server 8080
+
 req = requests.get("http://localhost:8080/planets.html")
 soup = BeautifulSoup(req.text, "html.parser")
 
