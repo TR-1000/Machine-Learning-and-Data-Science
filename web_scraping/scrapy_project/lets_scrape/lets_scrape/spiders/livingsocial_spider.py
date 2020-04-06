@@ -13,6 +13,7 @@ class LivingsocialSpider(scrapy.Spider):
 
         for result in response.xpath('//div[@id="pull-results"]//div[@class="cui-content "]'):
             yield {
-                'result': result.xpath('.//a/@href').get(),
-                'image': result.xpath('.//img')[1].xpath('.//@data-srcset').get().strip().split(" ")[0]
+                'link': result.xpath('.//a/@href').get(),
+                'image': result.xpath('.//img')[1].xpath('.//@data-srcset').get().strip().split(" ")[0],
+                'title': result.css('.cui-udc-title::text').get().strip()
                 }
