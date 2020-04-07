@@ -14,12 +14,13 @@ class LivingSocialDeal(Item):
     # Livingsocial container (dictionary-like object) for scraped data.
     # LivingSocialDeal class, will inherit from Item.
 
-    title = Field()
     link = Field()
+    image = Field()
+    title = Field()
+    subtitle = Field()
     location = Field()
-    original_price = Field()
     price = Field()
-    end_date = Field()
+    original_price = Field()
 
     # In scrapy, there are no other field types, unlike Django. So, use Field().
 
