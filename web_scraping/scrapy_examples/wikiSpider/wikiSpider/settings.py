@@ -21,6 +21,12 @@ NEWSPIDER_MODULE = 'wikiSpider.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+
+DB_SETTINGS = {
+    'db': 'scraping',
+    'user': 'postgres'
+ }
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -64,10 +70,14 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'wikiSpider.pipelines.WikispiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'wikiSpider.pipelines.WikispiderPipeline': 300,
+}
 
+DB_SETTINGS = {
+    'DATABASE': 'scraping',
+    'USER': 'postgres',
+ }
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
