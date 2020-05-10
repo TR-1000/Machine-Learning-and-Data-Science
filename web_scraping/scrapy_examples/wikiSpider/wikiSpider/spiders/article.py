@@ -11,7 +11,7 @@ class ArticleSpider(scrapy.Spider):
         'https://en.wikipedia.org/wiki/Monty_Python'
     ]
 
-    # scrape to dict
+    # # scrape to dict
     # def parse(self, response):
     #     url = response.url
     #     title = response.css('h1::text').extract_first()
@@ -30,9 +30,6 @@ class ArticleSpider(scrapy.Spider):
         article.add_value('url', response.url)
         article.add_css('title', ("h1::text"))
         return article.load_item()
-        print(article)
-
-
 
 
 

@@ -21,12 +21,6 @@ NEWSPIDER_MODULE = 'wikiSpider.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-
-DB_SETTINGS = {
-    'db': 'scraping',
-    'user': 'postgres'
- }
-
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 

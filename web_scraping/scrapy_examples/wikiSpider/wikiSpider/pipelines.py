@@ -31,12 +31,13 @@ class WikispiderPipeline(object):
     def process_item(self, item, spider):
         sql = "INSERT INTO test (url, title) VALUES (%s, %s)"
         self.cur.execute(sql,(
-                            item["url"],
-                            item["title"],
+                            item["url"][0],
+                            item["title"][0],
                         )
                     )
         self.conn.commit()
         print(f'inserted {item["url"]}, {item["title"]} into database')
+        
 
 
     def close_spider(self, spider):
